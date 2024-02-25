@@ -29,7 +29,7 @@ public class MarshallingServlet extends HttpServlet {
         configuration.setVersion(3);
 
         Marshaller marshaller = marshallerFactory.createMarshaller(configuration);
-        try (FileOutputStream os = new FileOutputStream("/Users/jyokosaw/tmp/eap-marshalling-test-obj.dat")) {
+        try (FileOutputStream os = new FileOutputStream("/tmp/eap-marshalling-test-obj.dat")) {
             marshaller.start(Marshalling.createByteOutput(os));
             System.out.println("-----");
             marshaller.writeObject(echoBean);  // serialize ejb client proxy object for Singleton Session Bean which contains a reference to org.
